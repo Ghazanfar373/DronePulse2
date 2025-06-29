@@ -297,7 +297,10 @@ namespace DronePulseClaude
                                 {
                                     // LogMessage($"Received {data.Length} bytes: {hexData}");
                                     //   LogMessage($"AS:{parser.HudData.Airspeed} HD: {parser.HudData.Heading} ");
-                                    LogMessage($"VFR_HUD: Update={parser.HudData.LastUpdate} AS={parser.HudData.Airspeed:F1}m/s, GS={parser.HudData.Groundspeed:F1}m/s, Alt={parser.HudData.Altitude:F1}m, Hdg={parser.HudData.Heading}°, Thr={parser.HudData.Throttle}%");
+                                    LogMessage($"VFR_HUD:   AS={parser.HudData.Airspeed:F1}m/s, GS={parser.HudData.Groundspeed:F1}m/s, Alt={parser.HudData.Altitude:F1}m, Hdg={parser.HudData.Heading}°, Thr={parser.HudData.Throttle}% \r\n");
+                                    LogMessage($"ATTITUDE:  Roll={parser.AttitudeData.RollDegrees:F1}°, Pitch={parser.AttitudeData.PitchDegrees:F1}°, Yaw={parser.AttitudeData.YawDegrees:F1}° \r\n");
+                                    LogMessage($"Heartbeat: Type={parser.cs.heartbeat.Kind}, Mode={parser.cs.mode}, Armed={parser.cs.armed} \r\n");
+
                                 }
                             }));
                         }

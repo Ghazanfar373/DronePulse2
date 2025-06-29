@@ -1,4 +1,5 @@
-﻿using DronePulseClaude.Models;
+﻿using DronePulse2.UAVState;
+using DronePulseClaude.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace DronePulseClaude.Services
         private readonly Dictionary<byte, byte> _systemComponentMap;
 
         public HudDataModel HudData { get; private set; }
+        public CurrentState cs { get; private set; }
         public AttitudeDataModel AttitudeData { get; private set; }
 
         public event EventHandler<HudDataModel> HudDataUpdated;
@@ -29,6 +31,7 @@ namespace DronePulseClaude.Services
 
             HudData = new HudDataModel();
             AttitudeData = new AttitudeDataModel();
+            cs = new CurrentState();
         }
 
         //public void ParseData(byte[] data)
